@@ -3,6 +3,6 @@
 	"account": "TheMuppets",
 	"repository": "proprietary_vendor_hp",
 	"target_path": "vendor/hp",
-	"revision": "ics"
+	"revision": "jellybean"
     }
 ]
