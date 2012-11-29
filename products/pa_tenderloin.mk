@@ -11,7 +11,7 @@ PRODUCT_RELEASE_NAME := Touchpad
 TARGET_BOOTANIMATION_NAME := horizontal-1024x768
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_large-mdpi
+OVERLAY_TARGET := pa_tenderloin
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
