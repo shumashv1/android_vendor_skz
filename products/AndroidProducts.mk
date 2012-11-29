@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ifeq (pa_tenderloin,$(TARGET_PRODUCT))
     PRODUCT_MAKEFILES += $(LOCAL_DIR)/pa_tenderloin.mk
 endif
