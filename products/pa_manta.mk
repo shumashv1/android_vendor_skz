@@ -13,13 +13,13 @@
 # limitations under the License.
 
 # Check for target product
-ifeq (pa_toro,$(TARGET_PRODUCT))
+ifeq (pa_manta,$(TARGET_PRODUCT))
 
 # Define PA bootanimation size
 PARANOID_BOOTANIMATION_NAME := XHDPI
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := pa_manta
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE := true
@@ -27,19 +27,15 @@ PREFS_FROM_SOURCE := true
 # Include ParanoidAndroid common configuration
 include vendor/pa/config/pa_common.mk
 
-# Include missing proprietaries
-#PRODUCT_COPY_FILES += \
-#  vendor/pa/proprietary/toro/bcm4330.hcd:system/vendor/firmware/bcm4330.hcd
-
 # Inherit AOSP device configuration
-$(call inherit-product, device/samsung/toro/full_toro.mk)
+$(call inherit-product, device/samsung/manta/full_manta.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_toro
-PRODUCT_BRAND := Google
-PRODUCT_MODEL := Galaxy Nexus
+PRODUCT_NAME := pa_manta
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Nexus 10
 PRODUCT_MANUFACTURER := Samsung
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=yakju BUILD_FINGERPRINT="google/yakju/maguro:4.2/JOP40C/527662:user/release-keys" PRIVATE_BUILD_DESC="yakju-user 4.2 JOP40C 527662 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=mantaray BUILD_FINGERPRINT="google/mantaray/manta:4.2/JOP40C/527662:user/release-keys" PRIVATE_BUILD_DESC="mantaray-user 4.2 JOP40C 527662 release-keys"
 
 GET_VENDOR_PROPS := $(shell vendor/pa/tools/getvendorprops.py $(PRODUCT_NAME))
 

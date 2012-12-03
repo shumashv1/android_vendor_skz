@@ -10,6 +10,17 @@ PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
     vendor/pa/prebuilt/common/xbin/su:system/xbin/su
 
+# Bring in camera effects
+PRODUCT_COPY_FILES +=  \
+    vendor/pa/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/pa/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+
+# Bring in all video files
+$(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
+
+# ROM stamp
+$(shell shuf -i 0-100000 -n 1 > .stamp)
+
 # Exclude prebuilt paprefs from builds if the flag is set
 ifneq ($(PREFS_FROM_SOURCE),true)
     PRODUCT_COPY_FILES += \
@@ -25,12 +36,15 @@ ifneq ($(PARANOID_BOOTANIMATION_NAME),)
         vendor/pa/prebuilt/common/bootanimation/$(PARANOID_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
 else
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/bootanimation/HDPI.zip:system/media/bootanimation.zip
+        vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
 endif
 
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
     ParanoidWallpapers
+
+# T-Mobile theme engine
+include vendor/pa/config/themes_common.mk
 
 # device common prebuilts
 ifneq ($(DEVICE_COMMON),)
