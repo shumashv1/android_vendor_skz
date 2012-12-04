@@ -13,7 +13,7 @@ TARGET_BOOTANIMATION_NAME := horizontal-1024x768
 # OVERLAY_TARGET adds overlay asset source and copy files required to build
 OVERLAY_TARGET := pa_tenderloin
 PRODUCT_COPY_FILES += \
-    vendor/pa/overlay/common/packages/inputmethods/LatinIME/java/res/values/gesture-input.xml: packages/inputmethods/LatinIME/java/res/gesture-input.xml \
+    vendor/pa/overlay/common/packages/inputmethods/LatinIME/java/res/values/gesture-input.xml: packages/inputmethods/LatinIME/java/res/values/gesture-input.xml \
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
