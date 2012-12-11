@@ -10,9 +10,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
 # PAC device overlay
 $(shell cp -f vendor/pac/overlay/pac/hp/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png)
 
-# include ParanoidAndroid common configuration
-include vendor/pac/config/pac_common.mk
-
 # Inherit CM device configuration
 $(call inherit-product, device/hp/tenderloin/device_tenderloin.mk)
 
