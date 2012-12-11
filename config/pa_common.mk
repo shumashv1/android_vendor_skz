@@ -29,7 +29,8 @@ else
     # Build paprefs from sources
     PRODUCT_PACKAGES += \
         ParanoidPreferences
-endif
+        ROMControl
+   endif
 
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
@@ -60,6 +61,9 @@ BOARD := $(subst pa_,,$(TARGET_PRODUCT))
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
+# AOKP Overlays
+PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common
+
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
     PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(OVERLAY_TARGET)
@@ -72,6 +76,17 @@ PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
     vendor/pa/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
 
+### SKZ ###
+# Common Proprietary
+#PRODUCT_COPY_FILES += \
+#    vendor/pac/prebuilt/common/app/FileManager.apk:system/app/FileManager.apk
+
+BOARD := $(subst SKZ_,,$(TARGET_PRODUCT))
+
+# Add CM release version
+CM_RELEASE := true
+CM_BUILD := $(BOARD)
+
 PA_VERSION_MAJOR = 2
 PA_VERSION_MINOR = 9
 PA_VERSION_MAINTENANCE = 9
@@ -81,10 +96,19 @@ TARGET_CUSTOM_RELEASETOOL := vendor/pa/tools/squisher
 VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
 PA_VERSION := $(TARGET_PRODUCT)-$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
 
+PAC_VERSION_MAJOR = 18
+PAC_VERSION_MINOR = 0
+PAC_VERSION_MAINTENANCE = 0
+PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENANCE)
+
 PRODUCT_PROPERTY_OVERRIDES += \
+  ro.pac.version=$(PAC_VERSION) \
+  ro.pacrom.version=$(BOARD)_SKZ_jb-beta-v$(PAC_VERSION) \
   ro.modversion=$(PA_VERSION) \
   ro.pa.family=$(PA_CONF_SOURCE) \
   ro.pa.version=$(VERSION)
+  ro.pa.version=$(VERSION) \
+  ro.aokp.version=$(BOARD)_jb-Milestone-1
 
 # goo.im properties
 PRODUCT_PROPERTY_OVERRIDES += \
