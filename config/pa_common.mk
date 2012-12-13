@@ -30,7 +30,7 @@ else
     PRODUCT_PACKAGES += \
         ParanoidPreferences
         ROMControl
-   endif
+endif
 
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
@@ -62,7 +62,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
 # AOKP Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -106,7 +106,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.pacrom.version=$(BOARD)_SKZ_jb-beta-v$(PAC_VERSION) \
   ro.modversion=$(PA_VERSION) \
   ro.pa.family=$(PA_CONF_SOURCE) \
-  ro.pa.version=$(VERSION)
   ro.pa.version=$(VERSION) \
   ro.aokp.version=$(BOARD)_jb-Milestone-1
 
