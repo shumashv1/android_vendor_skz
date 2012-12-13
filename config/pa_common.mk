@@ -24,24 +24,23 @@ $(shell shuf -i 0-100000 -n 1 > .stamp)
 # Exclude prebuilt paprefs from builds if the flag is set
 ifneq ($(PREFS_FROM_SOURCE),true)
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk
-    PRODUCT_PACKAGES += \
-        ROMControl \
-	AOKPtips \
-	AppWidgetPicker \
-	LatinImeGoogle \
-	LatinImeDictionary \
-	PerformanceControl
+        vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+        vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \    
+        vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
+        vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk
+
 else
     # Build paprefs from sources
     PRODUCT_PACKAGES += \
         ParanoidPreferences \
-        ROMControl \
-	AOKPtips \
-	AppWidgetPicker \
-	LatinImeGoogle \
-	LatinImeDictionary \
-	PerformanceControl 
+        ROMControl
+
+    PRODUCT_COPY_FILES += \
+        vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+        vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \    
+        vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
+        vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk
+
 endif
 
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
