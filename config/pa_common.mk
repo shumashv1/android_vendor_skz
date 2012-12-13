@@ -25,11 +25,23 @@ $(shell shuf -i 0-100000 -n 1 > .stamp)
 ifneq ($(PREFS_FROM_SOURCE),true)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk
+    PRODUCT_PACKAGES += \
+        ROMControl \
+	AOKPtips \
+	AppWidgetPicker \
+	LatinImeGoogle \
+	LatinImeDictionary \
+	PerformanceControl
 else
     # Build paprefs from sources
     PRODUCT_PACKAGES += \
-        ParanoidPreferences
-        ROMControl
+        ParanoidPreferences \
+        ROMControl \
+	AOKPtips \
+	AppWidgetPicker \
+	LatinImeGoogle \
+	LatinImeDictionary \
+	PerformanceControl 
 endif
 
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
