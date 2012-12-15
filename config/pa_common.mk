@@ -28,7 +28,9 @@ ifneq ($(PREFS_FROM_SOURCE),true)
         vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \    
         vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
         vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk
-
+ 
+   PRODUCT_PACKAGES += \
+        ROMControl
 else
     # Build paprefs from sources
     PRODUCT_PACKAGES += \
@@ -92,7 +94,7 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #    vendor/pac/prebuilt/common/app/FileManager.apk:system/app/FileManager.apk
 
-BOARD := $(subst SKZ_,,$(TARGET_PRODUCT))
+#BOARD := $(subst SKZ_,,$(TARGET_PRODUCT))
 
 # Add CM release version
 CM_RELEASE := true
