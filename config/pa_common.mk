@@ -68,14 +68,14 @@ endif
 # device specific prebuilts
 -include vendor/pa/prebuilt/$(TARGET_PRODUCT)/prebuilt.mk
 
-BOARD := $(subst pa_,,$(TARGET_PRODUCT))
+#BOARD := $(subst pa_,,$(TARGET_PRODUCT))
 
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
 # AOKP Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
+PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablet
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -94,7 +94,7 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
 #    vendor/pac/prebuilt/common/app/FileManager.apk:system/app/FileManager.apk
 
-#BOARD := $(subst SKZ_,,$(TARGET_PRODUCT))
+BOARD := $(subst SKZ_,,$(TARGET_PRODUCT))
 
 # Add CM release version
 CM_RELEASE := true
