@@ -116,7 +116,7 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.pac.version=$(PAC_VERSION) \
-  ro.pacrom.version=$(BOARD)_SKZ_jb-beta-v$(PAC_VERSION) \
+  ro.pacrom.version=$(BOARD)_SKZ_jb-RC0-v$(PAC_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
   ro.modversion=$(PA_VERSION) \
   ro.pa.family=$(PA_CONF_SOURCE) \
   ro.pa.version=$(VERSION) \
