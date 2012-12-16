@@ -4,11 +4,16 @@ ifeq (pa_tenderloin,$(TARGET_PRODUCT))
 # include ParanoidAndroid common configuration
 include vendor/pa/config/pa_common.mk
 
+<<<<<<< HEAD
 # AOKP device overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/configs/common_tablet
 
 # PAC device overlay
 $(shell cp -f vendor/pac/overlay/pac/hp/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png)
+=======
+# include PAC common configuration
+include vendor/pac/config/pac_common.mk
+>>>>>>> 6932fe8817ca36f65d0509f3702606d007c5a91c
 
 # Inherit CM device configuration
 $(call inherit-product, device/hp/tenderloin/device_tenderloin.mk)
@@ -16,7 +21,7 @@ $(call inherit-product, device/hp/tenderloin/device_tenderloin.mk)
 PRODUCT_RELEASE_NAME := Touchpad
 TARGET_BOOTANIMATION_NAME := horizontal-1024x768
 
-# OVERLAY_TARGET adds overlay asset source
+# OVERLAY_TARGET adds overlay asset source and copy files required to build
 OVERLAY_TARGET := pa_tenderloin
 
 # Inherit some common CM stuff.
