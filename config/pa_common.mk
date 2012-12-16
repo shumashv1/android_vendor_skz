@@ -28,9 +28,7 @@ ifneq ($(PREFS_FROM_SOURCE),true)
         vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \    
         vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
         vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk
- 
-   PRODUCT_PACKAGES += \
-        ROMControl
+
 else
     # Build paprefs from sources
     PRODUCT_PACKAGES += \
@@ -68,14 +66,14 @@ endif
 # device specific prebuilts
 -include vendor/pa/prebuilt/$(TARGET_PRODUCT)/prebuilt.mk
 
-#BOARD := $(subst pa_,,$(TARGET_PRODUCT))
+BOARD := $(subst pa_,,$(TARGET_PRODUCT))
 
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
 # AOKP Overlays
-#PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/configs/common_tablet
+# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -116,7 +114,7 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.pac.version=$(PAC_VERSION) \
-  ro.pacrom.version=$(BOARD)_SKZ_jb-beta-v$(PAC_VERSION) \
+  ro.pacrom.version=$(BOARD)_SKZ_jb-RC0-v$(PAC_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
   ro.modversion=$(PA_VERSION) \
   ro.pa.family=$(PA_CONF_SOURCE) \
   ro.pa.version=$(VERSION) \
