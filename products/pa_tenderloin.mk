@@ -5,7 +5,7 @@ ifeq (pa_tenderloin,$(TARGET_PRODUCT))
 include vendor/pa/config/pa_common.mk
 
 # AOKP device overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablet
+PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/configs/common_tablet
 
 # PAC device overlay
 $(shell cp -f vendor/pac/overlay/pac/hp/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png)
