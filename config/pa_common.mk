@@ -73,7 +73,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
 # AOKP Overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
+PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablet
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -114,7 +114,7 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.pac.version=$(PAC_VERSION) \
-  ro.pacrom.version=$(BOARD)_SKZ_jb-beta-v$(PAC_VERSION) \
+  ro.pacrom.version=$(BOARD)_SKZ_jb-RC0-v$(PAC_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
   ro.modversion=$(PA_VERSION) \
   ro.pa.family=$(PA_CONF_SOURCE) \
   ro.pa.version=$(VERSION) \
