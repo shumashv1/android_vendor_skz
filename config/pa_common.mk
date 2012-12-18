@@ -109,3 +109,7 @@ ifneq ($(DEVELOPER_VERSION),true)
       ro.goo.rom=paranoidandroid \
       ro.goo.version=$(shell date +%s)
 endif
+<<<<<<< .merge_file_3G63S3
+=======
+
+>>>>>>> .merge_file_OL1Df4
