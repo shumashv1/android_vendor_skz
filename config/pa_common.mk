@@ -36,7 +36,6 @@ else
         ROMControl
 
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
         vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \    
         vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
         vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk
@@ -73,7 +72,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
 # AOKP Overlays
-# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
+ PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/configs/common_tablet
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
