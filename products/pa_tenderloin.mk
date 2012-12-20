@@ -6,7 +6,6 @@ include vendor/pa/config/pa_common.mk
 
 # AOKP device overlay
 # Inherit AOKP common_tablet bits
-$(call inherit-product, vendor/aokp/configs/common_tablet.mk)
 PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/tenderloin
 
 # PAC device overlay
