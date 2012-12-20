@@ -5,7 +5,9 @@ ifeq (pa_tenderloin,$(TARGET_PRODUCT))
 include vendor/pa/config/pa_common.mk
 
 # AOKP device overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/device/tenderloin
+# Inherit AOKP common_tablet bits
+$(call inherit-product, vendor/aokp/configs/common_tablet.mk)
+PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/tenderloin
 
 # PAC device overlay
 $(shell cp -f vendor/pac/overlay/pac/hp/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png)
