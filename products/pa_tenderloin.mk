@@ -11,7 +11,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/configs/common_tablet
 $(shell cp -f vendor/pac/overlay/pac/hp/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png)
 
 # include PAC common configuration
-#include vendor/pac/config/pac_common.mk
+include vendor/pac/config/pac_common.mk
 
 # Inherit CM device configuration
 $(call inherit-product, device/hp/tenderloin/device_tenderloin.mk)
