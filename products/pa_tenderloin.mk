@@ -4,9 +4,8 @@ ifeq (pa_tenderloin,$(TARGET_PRODUCT))
 # include ParanoidAndroid common configuration
 include vendor/pa/config/pa_common.mk
 
-# AOKP device overlay
-# Inherit AOKP common_tablet bits
-PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/tenderloin
+# Inherit AOKP common_tablet overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/common_tablet
 
 # PAC device overlay
 $(shell cp -f vendor/pac/overlay/pac/hp/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png)
