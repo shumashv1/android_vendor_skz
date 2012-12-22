@@ -6,9 +6,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy specific ROM files
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
-    vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
-    vendor/pa/prebuilt/common/xbin/su:system/xbin/su
+    	vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
+   	vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+ 	vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \         		vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
+ 	vendor/pa/prebuilt/common/xbin/su:system/xbin/su \
+        vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
+        vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
+        vendor/pa/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -33,15 +37,12 @@ PRODUCT_COPY_FILES +=  \
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
-# Exclude prebuilt paprefs from builds if the flag is set
-ifneq ($(PREFS_FROM_SOURCE),true)
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk
-else
-    # Build paprefs from sources
+# ROM stamp
+$(shell shuf -i 0-100000 -n 1 > .stamp)
+
+# Build ROMControl from source
     PRODUCT_PACKAGES += \
-        ParanoidPreferences
-endif
+        ROMControl
 
 ifneq ($(PARANOID_BOOTANIMATION_NAME),)
     PRODUCT_COPY_FILES += \
@@ -72,6 +73,9 @@ BOARD := $(subst pa_,,$(TARGET_PRODUCT))
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
+# AOKP Overlays
+# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
+
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
     PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(OVERLAY_TARGET)
@@ -84,6 +88,17 @@ PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
     vendor/pa/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
 
+### SKZ ###
+# Common Proprietary
+#PRODUCT_COPY_FILES += \
+#    vendor/pac/prebuilt/common/app/FileManager.apk:system/app/FileManager.apk
+
+BOARD := $(subst SKZ_,,$(TARGET_PRODUCT))
+
+# Add CM release version
+CM_RELEASE := true
+CM_BUILD := $(BOARD)
+
 PA_VERSION_MAJOR = 2
 PA_VERSION_MINOR = 9
 PA_VERSION_MAINTENANCE = 9
@@ -94,19 +109,20 @@ VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
 ifeq ($(DEVELOPER_VERSION),true)
     PA_VERSION := dev_$(BOARD)-$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
 else
-    PA_VERSION := $(TARGET_PRODUCT)-$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
+    PA_VERSION := skz_$(BOARD)-$(VERSION)-RC0-$(shell date +%0d%^b%Y-%H%M%S)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
+  ro.pac.version=$(PAC_VERSION) \
+  ro.pacrom.version=$(BOARD)_SKZ_jb-RC0-v$(PAC_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
   ro.modversion=$(PA_VERSION) \
   ro.pa.family=$(PA_CONF_SOURCE) \
   ro.pa.version=$(VERSION)
 
 # goo.im properties
-ifneq ($(DEVELOPER_VERSION),true)
+ifeq ($(DEVELOPER_VERSION),true)
     PRODUCT_PROPERTY_OVERRIDES += \
       ro.goo.developerid=paranoidandroid \
       ro.goo.rom=paranoidandroid \
       ro.goo.version=$(shell date +%s)
 endif
-
