@@ -5,9 +5,9 @@ ifeq (pa_tenderloin,$(TARGET_PRODUCT))
 include vendor/pa/config/pa_common.mk
 
 # Inherit AOKP common_tablet overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/common_tablet
-PRODUCT_PACKAGES += \
-    ROMControl
+#PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/common_tablet
+#PRODUCT_PACKAGES += \
+#    ROMControl
 
 # PAC device overlay
 # Not done yet
