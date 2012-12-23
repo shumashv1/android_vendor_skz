@@ -6,13 +6,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy specific ROM files
 PRODUCT_COPY_FILES += \
-    	vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
-   	vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
- 	vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \         		vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
- 	vendor/pa/prebuilt/common/xbin/su:system/xbin/su \
-        vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
-        vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
-        vendor/pa/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
+vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
+vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
+vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
+vendor/pa/prebuilt/common/xbin/su:system/xbin/su \
+vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
+vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
+vendor/pa/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
 
 # init.d support
 PRODUCT_COPY_FILES += \
