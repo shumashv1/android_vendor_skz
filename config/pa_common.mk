@@ -7,7 +7,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Copy specific ROM files
 PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
-    vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk
+    vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
     vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
     vendor/pa/prebuilt/common/xbin/su:system/xbin/su
 
@@ -67,7 +67,7 @@ endif
 # device specific prebuilts
 -include vendor/pa/prebuilt/$(TARGET_PRODUCT)/prebuilt.mk
 
-BOARD := $(subst pa_,,$(TARGET_PRODUCT))
+BOARD := $(subst skz_,,$(TARGET_PRODUCT))
 
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
@@ -95,7 +95,7 @@ VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
 ifeq ($(DEVELOPER_VERSION),true)
     PA_VERSION := dev_$(BOARD)-$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
 else
-    PA_VERSION := skz_$(BOARD)-$(VERSION)-RC0-$(shell date +%0d%^b%Y-%H%M%S)
+    PA_VERSION := $(BOARD)-$(VERSION)-RC0-$(shell date +%0d%^b%Y-%H%M%S)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -104,7 +104,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.pa.version=$(VERSION)
 
 # goo.im properties
-ifneq ($(DEVELOPER_VERSION),true)
+ifeq ($(DEVELOPER_VERSION),true)
     PRODUCT_PROPERTY_OVERRIDES += \
       ro.goo.developerid=paranoidandroid \
       ro.goo.rom=paranoidandroid \
