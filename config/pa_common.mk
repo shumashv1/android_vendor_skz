@@ -6,10 +6,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy specific ROM files
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
-    vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
-    vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
-    vendor/pa/prebuilt/common/xbin/su:system/xbin/su
+vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
+vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
+vendor/pa/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk \
+vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
+vendor/pa/prebuilt/common/xbin/su:system/xbin/su \
+vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
+vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
+vendor/pa/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -73,6 +78,9 @@ BOARD := $(subst skz_,,$(TARGET_PRODUCT))
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
+# AOKP Overlays
+# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common
+
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
     PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(OVERLAY_TARGET)
@@ -104,7 +112,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.pa.version=$(VERSION)
 
 # goo.im properties
-ifeq ($(DEVELOPER_VERSION),true)
+ifneq ($(DEVELOPER_VERSION),true)
     PRODUCT_PROPERTY_OVERRIDES += \
       ro.goo.developerid=paranoidandroid \
       ro.goo.rom=paranoidandroid \
