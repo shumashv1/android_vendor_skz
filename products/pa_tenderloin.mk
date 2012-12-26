@@ -10,7 +10,7 @@ PRODUCT_PACKAGES += \
     ROMControl
 
 # PAC device overlay
-# Not done yet
+# Not done
 
 # include PAC common configuration
 #include vendor/pac/config/pac_common.mk
