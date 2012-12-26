@@ -47,7 +47,6 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
 
-
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
     ParanoidWallpapers
@@ -70,7 +69,7 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
 # AOKP Overlays
-# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common_tablets
+# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -108,11 +107,12 @@ PAC_VERSION_MAINTENANCE = 0
 PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENANCE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.pac.version=$(PAC_VERSION) \
-  ro.skzrom.version=$(BOARD)_SKZ_jb-RC0-v$(PAC_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
-  ro.modversion=$(PA_VERSION) \
-  ro.pa.family=$(PA_CONF_SOURCE) \
-  ro.pa.version=$(VERSION)
+    ro.skz.version=$(SKZ_VERSION) \
+    ro.skzrom.version=SKZ_$(BOARD)_jb-RC0-v$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.modversion=$(PA_VERSION) \
+    ro.pa.family=$(PA_CONF_SOURCE) \
+    ro.pa.version=$(VERSION) \
+    ro.aokp.version=$(BOARD)_jb-Milestone-1
 
 # goo.im properties
 ifneq ($(DEVELOPER_VERSION),true)
