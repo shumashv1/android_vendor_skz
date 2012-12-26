@@ -6,13 +6,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy specific ROM files
 PRODUCT_COPY_FILES += \
-    	vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
-   	vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
- 	vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \         		vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
- 	vendor/pa/prebuilt/common/xbin/su:system/xbin/su \
-        vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
-        vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
-        vendor/pa/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
+   vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
+   vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+   vendor/pa/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk \
+   vendor/pa/prebuilt/common/xbin/su:system/xbin/su \
+   vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
+   vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
+   vendor/pa/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
+   vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk
 
 # init.d support
 PRODUCT_COPY_FILES += \
@@ -44,13 +45,9 @@ $(shell shuf -i 0-100000 -n 1 > .stamp)
     PRODUCT_PACKAGES += \
         ROMControl
 
-ifneq ($(PARANOID_BOOTANIMATION_NAME),)
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/bootanimation/$(PARANOID_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
-else
+# Schizoid bootanimation
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
-endif
 
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
