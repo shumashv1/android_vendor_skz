@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
 # Not done
 
 # include PAC common configuration
--include vendor/pac/config/pac_common.mk
+#include vendor/pac/config/pac_common.mk
 
 # Inherit CM device configuration
 $(call inherit-product, device/hp/tenderloin/device_tenderloin.mk)
