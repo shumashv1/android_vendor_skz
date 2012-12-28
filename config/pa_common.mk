@@ -84,23 +84,36 @@ PRODUCT_COPY_FILES += \
     vendor/pa/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
     vendor/pa/prebuilt/$(PA_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
 
-PA_VERSION_MAJOR = 1
-PA_VERSION_MINOR = 0
-PA_VERSION_MAINTENANCE = 2
-
 TARGET_CUSTOM_RELEASETOOL := vendor/pa/tools/squisher
 
-VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
-ifeq ($(DEVELOPER_VERSION),true)
-    PA_VERSION := dev_$(BOARD)-$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
-else
-    PA_VERSION := skz_$(BOARD)-$(VERSION)-jb-RC0-$(shell date +%0d%^b%Y-%H%M%S)
-endif
+BOARD := $(subst skz_,,$(TARGET_PRODUCT))
+
+SKZ_VERSION_MAJOR = 1
+SKZ_VERSION_MINOR = 0
+SKZ_VERSION_MAINTENANCE = 2
+
+VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
+SKZ_VERSION := $(BOARD)-$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
+
+PA_VERSION_MAJOR = 2
+PA_VERSION_MINOR = 9
+PA_VERSION_MAINTENANCE = 9
+
+PA_VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
+PA_VERSION := $(BOARD)-$(PA_VERSION)
+
+PAC_VERSION_MAJOR = 18
+PAC_VERSION_MINOR = 0
+PAC_VERSION_MAINTENANCE = 0
+PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENANCE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.modversion=$(PA_VERSION) \
-  ro.pa.family=$(PA_CONF_SOURCE) \
-  ro.pa.version=$(VERSION)
+    ro.skz.version=$(SKZ_VERSION) \
+    ro.skzrom.version=SKZ_$(BOARD)_jb-RC0-v$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.modversion=$(PA_VERSION) \
+    ro.pa.family=$(PA_CONF_SOURCE) \
+    ro.pa.version=$(VERSION) \
+    ro.aokp.version=$(BOARD)_jb-Milestone-1
 
 # goo.im properties
 ifneq ($(DEVELOPER_VERSION),true)
