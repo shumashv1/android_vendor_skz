@@ -2,7 +2,7 @@
 ifeq (pa_tenderloin,$(TARGET_PRODUCT))
 
 # include ParanoidAndroid common configuration
--include vendor/pa/config/pa_common.mk
+include vendor/pa/config/pa_common.mk
 
 # Inherit AOKP common_tablet overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/PAC/overlay/aokp/common
