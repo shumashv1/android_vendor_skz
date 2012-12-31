@@ -43,8 +43,8 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 $(shell shuf -i 0-100000 -n 1 > .stamp)
 
 # Build ROMControl from source
-    PRODUCT_PACKAGES += \
-        ROMControl
+#    PRODUCT_PACKAGES += \
+#        ROMControl
 
 # Schizoid bootanimation
     PRODUCT_COPY_FILES += \
