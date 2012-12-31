@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES +=  \
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
 # ROM stamp
-$(shell shuf -i 0-100000 -n 1 > .stamp)
+#$(shell shuf -i 0-100000 -n 1 > .stamp)
 
 # Build ROMControl from source
 #    PRODUCT_PACKAGES += \
