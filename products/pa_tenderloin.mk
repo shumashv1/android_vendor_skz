@@ -4,10 +4,11 @@ ifeq (pa_tenderloin,$(TARGET_PRODUCT))
 # include ParanoidAndroid common configuration
 include vendor/pa/config/pa_common.mk
 
-# Inherit AOKP common_tablet overlay
+
 # ROM stamp
 #$(shell shuf -i 0-100000 -n 1 > .stamp)
 
+# Inherit AOKP common_tablet overlay
 #PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/common_tablet
 #PRODUCT_PACKAGES += \
 #    ROMControl
