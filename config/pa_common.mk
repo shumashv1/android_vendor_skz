@@ -39,10 +39,6 @@ PRODUCT_COPY_FILES +=  \
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
-# Build ROMControl from source
-    PRODUCT_PACKAGES += \
-        ROMControl
-
 # Schizoid bootanimation
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
@@ -67,9 +63,6 @@ BOARD := $(subst pa_,,$(TARGET_PRODUCT))
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
-
-# AOKP Overlays
-# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -108,7 +101,7 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
-    ro.skzrom.version=SKZ_$(BOARD)_jb-RC0-v$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.parom.version=skz_$(BOARD)_jb-v$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
     ro.modversion=$(PA_VERSION) \
     ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(VERSION) \
