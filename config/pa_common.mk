@@ -39,11 +39,14 @@ PRODUCT_COPY_FILES +=  \
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
+# ROM stamp
+$(shell shuf -i 0-100000 -n 1 > .stamp)
 
-ifneq ($(PARANOID_BOOTANIMATION_NAME),)
-    PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/bootanimation/$(PARANOID_BOOTANIMATION_NAME).zip:system/media/bootanimation.zip
-else
+# Build ROMControl from source
+    PRODUCT_PACKAGES += \
+        ROMControl
+
+# Schizoid bootanimation
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
 endif
@@ -86,33 +89,30 @@ PRODUCT_COPY_FILES += \
 
 TARGET_CUSTOM_RELEASETOOL := vendor/pa/tools/squisher
 
-BOARD := $(subst pa_,,$(TARGET_PRODUCT))
+BOARD := $(subst skz_,,$(TARGET_PRODUCT))
 
-# Add CM release version
-CM_RELEASE := true
-CM_BUILD := $(BOARD)
+SKZ_VERSION_MAJOR = 1
+SKZ_VERSION_MINOR = 0
+SKZ_VERSION_MAINTENANCE = 2
 
-SKZ_VERSION_MAJOR = 0
-SKZ_VERSION_MINOR = 7
-SKZ_VERSION_MAINTENANCE = 0
-SKZ_VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
+VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
+SKZ_VERSION := $(BOARD)-$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
 
 PA_VERSION_MAJOR = 2
 PA_VERSION_MINOR = 9
 PA_VERSION_MAINTENANCE = 9
-PA_VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
-VERSION := PA_VERSION
 
-PA_VERSION := skz_$(BOARD)_jb-v$(SKZ_VERSION)-PA$(PA_VERSION)-$(shell date +%0d%^b%Y)
+PA_VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
+PA_VERSION := $(BOARD)-$(PA_VERSION)
 
 PAC_VERSION_MAJOR = 18
-PAC_VERSION_MINOR = 0eakae
+PAC_VERSION_MINOR = 0
 PAC_VERSION_MAINTENANCE = 0
 PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENANCE)
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
-    ro.skzrom.version=skz_$(BOARD)_jb-v$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.skzrom.version=SKZ_$(BOARD)_jb-RC0-v$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
     ro.modversion=$(PA_VERSION) \
     ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(VERSION) \
