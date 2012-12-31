@@ -49,7 +49,6 @@ $(shell shuf -i 0-100000 -n 1 > .stamp)
 # Schizoid bootanimation
     PRODUCT_COPY_FILES += \
         vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
-endif
 
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
