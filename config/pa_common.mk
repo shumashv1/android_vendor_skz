@@ -86,7 +86,7 @@ SKZ_VERSION_MINOR = 9
 SKZ_VERSION_MAINTENANCE = 0
 
 VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
-SKZ_VERSION := skz_$(BOARD)-$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
+SKZ_VERSION := skz_$(BOARD)-$(SKZ_VERSION)
 
 PA_VERSION_MAJOR = 2
 PA_VERSION_MINOR = 9
@@ -102,7 +102,7 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
-    ro.skzrom.version=skz_$(BOARD)_jb-v$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.skzrom.version=$(SKZ_VERSION)_jb-$(shell date +%0d%^b%Y-%H%M%S) \
     ro.modversion=$(SKZ_VERSION) \
     ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(PA_VERSION) \
