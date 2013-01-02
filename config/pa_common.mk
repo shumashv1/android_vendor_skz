@@ -64,9 +64,6 @@ BOARD := $(subst pa_,,$(TARGET_PRODUCT))
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/common
 PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(TARGET_PRODUCT)
 
-# AOKP Overlays
-# PRODUCT_PACKAGE_OVERLAYS += vendor/pac/overlay/aokp/common
-
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
     PRODUCT_PACKAGE_OVERLAYS += vendor/pa/overlay/$(OVERLAY_TARGET)
@@ -85,7 +82,7 @@ SKZ_VERSION_MAJOR = 0
 SKZ_VERSION_MINOR = 9
 SKZ_VERSION_MAINTENANCE = 0
 
-VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
+SKZ_VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
 SKZ_VERSION := skz_$(BOARD)-$(SKZ_VERSION)
 
 PA_VERSION_MAJOR = 2
@@ -102,8 +99,8 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
-    ro.skzrom.version=$(SKZ_VERSION)_jb-$(shell date +%0d%^b%Y-%H%M%S) \
-    ro.modversion=$(SKZ_VERSION) \
+    ro.skzrom.version=$(SKZ_VERSION)_jb \
+    ro.modversion=$(SKZ_VERSION)_jb-$(shell date +%0d%^b%Y-%H%M%S) \
     ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(PA_VERSION) \
     ro.pac.version=$(PAC_VERSION) \
