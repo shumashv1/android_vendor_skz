@@ -8,10 +8,10 @@ include vendor/pa/config/pa_common.mk
 # ROM stamp
 #$(shell shuf -i 0-100000 -n 1 > .stamp)
 
-# Inherit AOKP common_tablet overlay
-#PRODUCT_PACKAGE_OVERLAYS += vendor/aokp/overlay/common_tablet
-#PRODUCT_PACKAGES += \
-#    ROMControl
+# Inherit PAC AOKP common_tablet overlay
+#PRODUCT_PACKAGE_OVERLAYS += vendor/PAC/aokp/overlay/common_tablet
+PRODUCT_PACKAGES += \
+    ROMControl
 
 # PAC device overlay
 # Not done

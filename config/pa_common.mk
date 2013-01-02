@@ -41,7 +41,7 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
 # Schizoid bootanimation
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/bootanimation/XHDPI.zip:system/media/bootanimation.zip
+        vendor/pa/prebuilt/common/bootanimation/skzbootanimation.zip:system/media/bootanimation.zip
 
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
@@ -81,14 +81,12 @@ PRODUCT_COPY_FILES += \
 
 TARGET_CUSTOM_RELEASETOOL := vendor/pa/tools/squisher
 
-BOARD := $(subst skz_,,$(TARGET_PRODUCT))
-
-SKZ_VERSION_MAJOR = 1
-SKZ_VERSION_MINOR = 0
-SKZ_VERSION_MAINTENANCE = 2
+SKZ_VERSION_MAJOR = 0
+SKZ_VERSION_MINOR = 9
+SKZ_VERSION_MAINTENANCE = 0
 
 VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
-SKZ_VERSION := $(BOARD)-$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
+SKZ_VERSION := skz_$(BOARD)-$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S)
 
 PA_VERSION_MAJOR = 2
 PA_VERSION_MINOR = 9
@@ -104,10 +102,11 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
-    ro.skzrom.version=SKZ_$(BOARD)_jb-RC0-v$(SKZ_VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
-    ro.modversion=$(PA_VERSION) \
+    ro.skzrom.version=skz_$(BOARD)_jb-v$(VERSION)-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.modversion=$(SKZ_VERSION) \
     ro.pa.family=$(PA_CONF_SOURCE) \
-    ro.pa.version=$(VERSION) \
+    ro.pa.version=$(PA_VERSION) \
+    ro.pac.version=$(PAC_VERSION) \
     ro.aokp.version=$(BOARD)_jb-Milestone-1
 
 # goo.im properties
