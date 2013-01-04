@@ -6,42 +6,42 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy specific ROM files
 PRODUCT_COPY_FILES += \
-vendor/pa/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
-vendor/pa/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
-vendor/pa/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
-vendor/pa/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk \
-vendor/pa/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
-vendor/pa/prebuilt/common/xbin/su:system/xbin/su \
-vendor/pa/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
-vendor/pa/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
-vendor/pa/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
+vendor/skz/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+vendor/skz/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
+vendor/skz/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
+vendor/skz/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk \
+vendor/skz/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
+vendor/skz/prebuilt/common/xbin/su:system/xbin/su \
+vendor/skz/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
+vendor/skz/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
+vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/pa/prebuilt/common/etc/init.pa.rc:root/init.pa.rc
+    vendor/skz/prebuilt/common/bin/sysinit:system/bin/sysinit \
+    vendor/skz/prebuilt/common/etc/init.pa.rc:root/init.pa.rc
 
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/skz/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/pa/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/pa/prebuilt/common/bin/50-backupScript.sh:system/addon.d/50-backupScript.sh
+    vendor/skz/prebuilt/common/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/skz/prebuilt/common/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/skz/prebuilt/common/bin/50-backupScript.sh:system/addon.d/50-backupScript.sh
 
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
-    vendor/pa/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/pa/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+    vendor/skz/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/skz/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
 # Schizoid bootanimation
     PRODUCT_COPY_FILES += \
-        vendor/pa/prebuilt/common/bootanimation/skzbootanimation.zip:system/media/bootanimation.zip
+        vendor/skz/prebuilt/common/bootanimation/skzbootanimation.zip:system/media/bootanimation.zip
 
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
@@ -73,10 +73,10 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
-    vendor/pa/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
-    vendor/pa/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
+    vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
+    vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
 
-TARGET_CUSTOM_RELEASETOOL := vendor/pa/tools/squisher
+TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
 SKZ_VERSION_MAJOR = 0
 SKZ_VERSION_MINOR = 9
