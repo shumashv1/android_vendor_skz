@@ -29,6 +29,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=touchpad BUILD_FINGERPRINT=hp/hp_te
 PRODUCT_NAME := skz_tenderloin
 PRODUCT_DEVICE := tenderloin
 
-GET_VENDOR_PROPS := $(shell vendor/pa/tools/getvendorprops.py $(PRODUCT_NAME))
+GET_VENDOR_PROPS := $(shell vendor/skz/tools/getvendorprops.py $(PRODUCT_NAME))
 
 endif
