@@ -75,8 +75,8 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
     vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/backup.conf \
-    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/*.xml:system/etc/paranoid/preferences/ \
-    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/*.jpg:system/etc/paranoid/preferences/images/
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/*.xml:system/etc/paranoid/preferences/*.xml \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/*.jpg:system/etc/paranoid/preferences/images/*.jpg
 
 TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
