@@ -75,8 +75,14 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
     vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/backup.conf \
-    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/*.xml:system/etc/paranoid/preferences/*.xml \
-    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/*.jpg:system/etc/paranoid/preferences/images/*.jpg
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/0_colors.xml:system/etc/paranoid/preferences/0_colors.xml \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/pref_1.xml:system/etc/paranoid/preferences/pref_1.xml \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/pref_2.xml:system/etc/paranoid/preferences/pref_2.xml \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/pref_3.xml:system/etc/paranoid/preferences/pref_3.xml \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/undefined.jpg:system/etc/paranoid/preferences/images/undefined.jpg \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/phablet.jpg:system/etc/paranoid/preferences/images/phablet.jpg \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/phone.jpg:system/etc/paranoid/preferences/images/phone.jpg \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/tablet.jpg:system/etc/paranoid/preferences/images/tablet.jpg
 
 TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
