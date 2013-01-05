@@ -19,7 +19,7 @@ vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latini
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/skz/prebuilt/common/etc/init.pa.rc:root/init.skz.rc
+    vendor/skz/prebuilt/common/etc/init.skz.rc:root/init.skz.rc
 
 # userinit support
 PRODUCT_COPY_FILES += \
