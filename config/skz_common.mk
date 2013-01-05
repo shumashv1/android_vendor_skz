@@ -19,7 +19,7 @@ vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latini
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/common/bin/sysinit:system/bin/sysinit \
-    vendor/skz/prebuilt/common/etc/init.pa.rc:root/init.pa.rc
+    vendor/skz/prebuilt/common/etc/init.pa.rc:root/init.skz.rc
 
 # userinit support
 PRODUCT_COPY_FILES += \
@@ -62,7 +62,7 @@ BOARD := $(subst skz_,,$(TARGET_PRODUCT))
 
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/skz/overlay/common
-PRODUCT_PACKAGE_OVERLAYS += vendor/skz/overlay/$(TARGET_PRODUCT)
+#PRODUCT_PACKAGE_OVERLAYS += vendor/skz/overlay/$(TARGET_PRODUCT)
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -74,9 +74,9 @@ endif
 
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
-    vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/backup.conf
-    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/*.xml:system/etc/paranoid/preferences/*.xml
-    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/*.jpg:system/etc/paranoid/preferences/images/*.jpg
+    vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/backup.conf \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/*.xml:system/etc/paranoid/preferences/ \
+    vendor/skz/prebuilt/preferences/$(SKZ_CONF_SOURCE)/images/*.jpg:system/etc/paranoid/preferences/images/
 
 TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
