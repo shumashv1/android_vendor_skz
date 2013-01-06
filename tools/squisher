@@ -35,7 +35,7 @@ if [ ! -f "$OTAPACKAGE" ]; then
 	exit 1
 fi
 
-OPTICHARGER=$ANDROID_BUILD_TOP/vendor/pa/tools/opticharger
+OPTICHARGER=$ANDROID_BUILD_TOP/vendor/skz/tools/opticharger
 QUIET=-q
 DELETE_BINS="applypatch applypatch_static check_prereq recovery updater"
 
@@ -66,14 +66,14 @@ $SED -i \
 	$REPACK/ota/system/build.prop
 
 # Delete ParanoidAndroid specific files
-if [ -f $ANDROID_BUILD_TOP/vendor/pa/tools/squisher.rm ]; then
+if [ -f $ANDROID_BUILD_TOP/vendor/skz/tools/squisher.rm ]; then
 	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/pa/tools/squisher.rm`; do
 		rm -f $REPACK/ota/$RM_FILE
 	done
 fi
 
 # Delete target product specific files
-if [ -f $ANDROID_BUILD_TOP/vendor/pa/tools/$TARGET_PRODUCT-squisher.rm ]; then
+if [ -f $ANDROID_BUILD_TOP/vendor/skz/tools/$TARGET_PRODUCT-squisher.rm ]; then
 	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/pa/tools/$TARGET_PRODUCT-squisher.rm`; do
 		rm -f $REPACK/ota/$RM_FILE
 	done
@@ -108,8 +108,8 @@ printf "Copying overlay preferences for $OVERLAYTARGET..."
 echo
 mkdir $REPACK/ota/system/etc/paranoid/preferences
 mkdir $REPACK/ota/system/etc/paranoid/preferences/images
-cp -r $ANDROID_BUILD_TOP/vendor/pa/prebuilt/preferences/images/* $REPACK/ota/system/etc/paranoid/preferences/images/
-cp -r $ANDROID_BUILD_TOP/vendor/pa/prebuilt/preferences/$OVERLAYTARGET/* $REPACK/ota/system/etc/paranoid/preferences/
+cp -r $ANDROID_BUILD_TOP/vendor/skz/prebuilt/preferences/images/* $REPACK/ota/system/etc/paranoid/preferences/images/
+cp -r $ANDROID_BUILD_TOP/vendor/skz/prebuilt/preferences/$OVERLAYTARGET/* $REPACK/ota/system/etc/paranoid/preferences/
 
 # Pack it up and sign
 printf "Zipping package..."
