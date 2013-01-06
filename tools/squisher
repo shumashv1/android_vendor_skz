@@ -67,14 +67,14 @@ $SED -i \
 
 # Delete ParanoidAndroid specific files
 if [ -f $ANDROID_BUILD_TOP/vendor/skz/tools/squisher.rm ]; then
-	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/pa/tools/squisher.rm`; do
+	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/skz/tools/squisher.rm`; do
 		rm -f $REPACK/ota/$RM_FILE
 	done
 fi
 
 # Delete target product specific files
 if [ -f $ANDROID_BUILD_TOP/vendor/skz/tools/$TARGET_PRODUCT-squisher.rm ]; then
-	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/pa/tools/$TARGET_PRODUCT-squisher.rm`; do
+	for RM_FILE in `cat $ANDROID_BUILD_TOP/vendor/skz/tools/$TARGET_PRODUCT-squisher.rm`; do
 		rm -f $REPACK/ota/$RM_FILE
 	done
 fi
@@ -91,25 +91,25 @@ rm -rf $REPACK/ota/recovery
 
 # Determine what to name the new signed package
 if [ -z "$CYANOGEN_NIGHTLY" ]; then
-	PAVERSION=`grep 'ro.modversion=' $REPACK/ota/system/build.prop | sed -e 's/ro.modversion=//g'`
-	OVERLAYTARGET=`grep 'ro.pa.family=' $REPACK/ota/system/build.prop | sed -e 's/ro.pa.family=//g'`
-	: ${PAVERSION:=nightly}
-	OUTFILE=$OUT/$PAVERSION.zip
-	echo PAVERSION: $PAVERSION
+	SKZVERSION=`grep 'ro.modversion=' $REPACK/ota/system/build.prop | sed -e 's/ro.modversion=//g'`
+	OVERLAYTARGET=`grep 'ro.skzversion=' $REPACK/ota/system/build.prop | sed -e 's/ro.skzversion=//g'`
+	: ${SKZVERSION:=nightly}
+	OUTFILE=$OUT/$SZVERSION.zip
+	echo SKZVERSION: $SKZVERSION
 else
 	OUTFILE=$OUT/update-squished.zip
 fi
 
 # PA versioning
-( cd $REPACK/ota/system/etc/paranoid; echo com.paranoid.preferences.version=$PAVERSION >> backup.conf; )
+( cd $REPACK/ota/system/etc/paranoid; echo com.paranoid.preferences.version=$SKZVERSION >> backup.conf; )
 
 # Copy ParanoidPreferences overlays
 printf "Copying overlay preferences for $OVERLAYTARGET..."
 echo
 mkdir $REPACK/ota/system/etc/paranoid/preferences
 mkdir $REPACK/ota/system/etc/paranoid/preferences/images
-cp -r $ANDROID_BUILD_TOP/vendor/skz/prebuilt/preferences/images/* $REPACK/ota/system/etc/paranoid/preferences/images/
-cp -r $ANDROID_BUILD_TOP/vendor/skz/prebuilt/preferences/$OVERLAYTARGET/* $REPACK/ota/system/etc/paranoid/preferences/
+cp -r $ANDROID_BUILD_TOP/vendor/skz/prebuilt/preferences/$TARGET_PRODUCT/images/* $REPACK/ota/system/etc/paranoid/preferences/images/
+cp -r $ANDROID_BUILD_TOP/vendor/skz/prebuilt/preferences/$TARGET_PRODUCT/* $REPACK/ota/system/etc/paranoid/preferences/
 
 # Pack it up and sign
 printf "Zipping package..."
