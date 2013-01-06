@@ -94,7 +94,7 @@ if [ -z "$CYANOGEN_NIGHTLY" ]; then
 	SKZVERSION=`grep 'ro.modversion=' $REPACK/ota/system/build.prop | sed -e 's/ro.modversion=//g'`
 	OVERLAYTARGET=`grep 'ro.skzversion=' $REPACK/ota/system/build.prop | sed -e 's/ro.skzversion=//g'`
 	: ${SKZVERSION:=nightly}
-	OUTFILE=$OUT/$SZVERSION.zip
+	OUTFILE=$OUT/$SKZVERSION.zip
 	echo SKZVERSION: $SKZVERSION
 else
 	OUTFILE=$OUT/update-squished.zip
@@ -104,7 +104,7 @@ fi
 ( cd $REPACK/ota/system/etc/paranoid; echo com.paranoid.preferences.version=$SKZVERSION >> backup.conf; )
 
 # Copy ParanoidPreferences overlays
-printf "Copying overlay preferences for $OVERLAYTARGET..."
+printf "Copying overlay preferences for $TARGET_PRODUCT..."
 echo
 mkdir $REPACK/ota/system/etc/paranoid/preferences
 mkdir $REPACK/ota/system/etc/paranoid/preferences/images
