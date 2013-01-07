@@ -4,24 +4,6 @@ ifeq (skz_tenderloin,$(TARGET_PRODUCT))
 # include ParanoidAndroid common configuration
 include vendor/skz/config/skz_common.mk
 
-
-# Modification to check for prebuilts, download and install if not present
-# Initial release: 1 November 2012 by shumash
-
-BASEDIR=$PWD/vendor/cm
-
-if [ ! -e $BASEDIR/proprietary ] ; then
-	mkdir -p $BASEDIR/proprietary/lib/armeabi
-
-	# Get Android Terminal Emulator (copy a prebuilt so it can update from the Market)
-PRODUCT_COPY_FILES += \
-    vendor/skz/overlay/common/packages/inputmethods/LatinIME/java/res/values/gesture-input.xml:packages/inputmethods/LatinIME/java/res/values/gesture-input.xml \
-    vendor/skz/prebuilt/common/apk/Term.apk:$BASEDIR/proprietary/Term.apk
-
-    unzip -o -d $BASEDIR/proprietary $BASEDIR/proprietary/Term.apk lib/armeabi/libjackpal-androidterm4.so
-
-endif
-
 # ROM stamp
 #$(shell shuf -i 0-100000 -n 1 > .stamp)
 
