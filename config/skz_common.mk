@@ -9,13 +9,13 @@ PRODUCT_COPY_FILES += \
 vendor/skz/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
 vendor/skz/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
 vendor/skz/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
-#vendor/skz/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk \
 vendor/skz/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
 vendor/skz/prebuilt/common/xbin/su:system/xbin/su \
 vendor/skz/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
 vendor/skz/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
 vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so 
 
+#vendor/skz/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk \
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/common/bin/sysinit:system/bin/sysinit \
@@ -41,7 +41,7 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
 # Schizoid bootanimation
     PRODUCT_COPY_FILES += \
-        vendor/skz/prebuilt/common/bootanimation/skzbootanimation.zip:system/media/bootanimation.zip
+	vendor/skz/prebuilt/common/bootanimation/skzbootanimation.zip:system/media/bootanimation.zip
 
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
