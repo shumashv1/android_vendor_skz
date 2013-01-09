@@ -1,16 +1,16 @@
 [
-    {    
+    {
         "remote":       "github",
-	"account":	"TheMuppets",
-	"repository":	"proprietary_vendor_hp",
-	"target_path":	"vendor/hp",
-	"revision":	"jellybean"
+        "account":      "TheMuppets",
+        "repository":   "proprietary_vendor_hp",
+        "target_path":  "vendor/hp",
+        "revision":     "jellybean"
     },
     {
         "remote":       "github",
-	"account":	"CyanogenMod"   
-	"repository":	"hp-kernel-tenderloin",
- 	"target_path":	"kernel/hp/tenderloin",
-	"branch":	"ics"
-     }
+        "account":      "CyanogenMod",
+        "repository":   "hp-kernel-tenderloin",
+        "target_path":  "kernel/hp/tenderloin",
+        "revision":     "ics"
+    }
 ]
