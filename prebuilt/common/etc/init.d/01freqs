@@ -1,3 +1,5 @@
+#!/system/bin/sh
+
 # Get scaling frequencies from alternate location for ROMControl and put them in /data/local in the proper format
 
 # Get available scaling frequencies

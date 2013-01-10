@@ -24,7 +24,7 @@ PRODUCT_COPY_FILES += \
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/skz/prebuilt/common/etc/userinit.sh:data/local/userinit.sh
+    vendor/skz/prebuilt/common/etc/init.d/01freqs:system/etc/init.d/01freqs
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
