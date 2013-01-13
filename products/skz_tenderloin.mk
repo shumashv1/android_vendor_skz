@@ -5,7 +5,7 @@ ifeq (skz_tenderloin,$(TARGET_PRODUCT))
 include vendor/skz/config/skz_common.mk
 
 # ROM stamp
-#$(shell shuf -i 0-100000 -n 1 > .stamp)
+$(shell shuf -i 0-100000 -n 1 > .stamp)
 
 # Inherit PAC AOKP common_tablet overlay
 PRODUCT_PACKAGES += \
