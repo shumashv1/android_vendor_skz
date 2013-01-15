@@ -1,15 +1,25 @@
 # Check for target product
 ifeq (skz_tenderloin,$(TARGET_PRODUCT))
 
+BUILD_FROM_SOURCE := true
+
 # include ParanoidAndroid common configuration
 include vendor/skz/config/skz_common.mk
 
+#Check to see if we should use prebuilt
+ifneq ($(BUILD_FROM_SOURCE),true)
+    PRODUCT_COPY_FILES += \
+        vendor/skz/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk
+else
+#Build ROMControl from modified source
 # ROM stamp
 $(shell shuf -i 0-100000 -n 1 > .stamp)
 
-# Inherit PAC AOKP common_tablet overlay
 PRODUCT_PACKAGES += \
     ROMControl
+endif
+
+
 
 # Inherit CM device configuration
 $(call inherit-product, device/hp/tenderloin/device_tenderloin.mk)
