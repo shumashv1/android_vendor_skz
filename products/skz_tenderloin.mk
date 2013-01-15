@@ -1,7 +1,7 @@
 # Check for target product
 ifeq (skz_tenderloin,$(TARGET_PRODUCT))
 
-BUILD_FROM_SOURCE := false
+BUILD_FROM_SOURCE := true
 
 # include ParanoidAndroid common configuration
 include vendor/skz/config/skz_common.mk
