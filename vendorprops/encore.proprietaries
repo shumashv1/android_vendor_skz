@@ -1,0 +1,23 @@
+[
+    {
+        "remote":       "github",
+        "account":      "NookieDevs",
+        "repository":   "android_device_bn_encore",
+        "target_path":  "device/bn/encore",
+        "revision":     "jellybean"
+    },
+    {
+        "remote":       "github",
+        "account":      "NookieDevs",
+        "repository":   "android_kernel_bn_encore",
+        "target_path":  "kernel/bn/encore",
+        "revision":     "encore-omap3-3"
+    },
+    {
+        "remote":       "github",
+        "account":      "eyeballer",
+        "repository":   "proprietary_vendor_bn",
+        "target_path":  "vendor/bn",
+        "revision":     "jellybean"
+    }
+]
