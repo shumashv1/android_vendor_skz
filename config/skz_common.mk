@@ -79,6 +79,8 @@ PRODUCT_COPY_FILES += \
 
 TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
+BUILD_DATE := $(shell date +%0d%^b%Y-%H%M%S)
+
 SKZ_VERSION_MAJOR = 1
 SKZ_VERSION_MINOR = 1
 SKZ_VERSION_MAINTENANCE = 0
@@ -101,7 +103,7 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
     ro.skzrom.version=$(SKZ_VERSION)_jb \
-    ro.modversion=$(SKZ_VERSION)_jb-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.modversion=$(SKZ_VERSION)_jb-$(BUILD_DATE) \
     ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(PA_VERSION) \
     ro.pac.version=$(PAC_VERSION) \
