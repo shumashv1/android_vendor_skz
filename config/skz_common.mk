@@ -64,7 +64,12 @@ BOARD := $(subst skz_,,$(TARGET_PRODUCT))
 
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/skz/overlay/common
-#PRODUCT_PACKAGE_OVERLAYS += vendor/skz/overlay/$(TARGET_PRODUCT)
+
+# SKZ overlays 
+ $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png) 
+ $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/res/drawable-nodpi/default_wallpaper.jpg frameworks/base/core/res/res/drawable-nodpi/default_wallpaper.jpg) 
+ $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/res/drawable-sw600dp-nodpi/default_wallpaper.jpg frameworks/base/core/res/res/drawable-sw600dp-nodpi/default_wallpaper.jpg) 
+ $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/res/drawable-sw720dp-nodpi/default_wallpaper.jpg frameworks/base/core/res/res/drawable-sw720dp-nodpi/default_wallpaper.jpg) 
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
