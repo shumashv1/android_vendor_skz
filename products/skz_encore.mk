@@ -6,6 +6,10 @@ BUILD_FROM_SOURCE := false
 # include Schizoid common configuration
 include vendor/skz/config/skz_common.mk
 
+# Schizoid bootanimation
+    PRODUCT_COPY_FILES += \
+	vendor/skz/overlay/$(TARGET_PRODUCT)/bootanimation.zip:system/media/bootanimation.zip
+
 #Check to see if we should use prebuilt
 ifneq ($(BUILD_FROM_SOURCE),true)
     PRODUCT_COPY_FILES += \

@@ -41,10 +41,6 @@ PRODUCT_COPY_FILES +=  \
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
-# Schizoid bootanimation
-    PRODUCT_COPY_FILES += \
-	vendor/skz/prebuilt/common/bootanimation/skzbootanimation.zip:system/media/bootanimation.zip
-
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
     ParanoidWallpapers
