@@ -21,7 +21,7 @@
 
         <description><![CDATA[Hybrid mode <b><font color='green'>on</font></b><br\>Phone workspace]]></description>
         <setting type="Hybrid" target="%hybrid_mode" value="1"/>
-        <setting type="Hybrid" target="com.android.systemui.dpi" value="%rom_default_dpi"/>
+        <setting type="Hybrid" target="com.android.systemui.dpi" value="%rom_default_systemui_dpi"/>
         <setting type="Hybrid" target="com.android.systemui.layout" value="360"/>
 
 </property>

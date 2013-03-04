@@ -1,8 +1,0 @@
-#!/system/bin/sh
-
-# Copy PA mode configuration files into backup location
-
-mkdir /data/data/com.paranoid.preferences/files/backup
-cp -f /system/etc/paranoid/Tablet.conf /data/data/com.paranoid.preferences/files/backup
-cp -f /system/etc/paranoid/Stock.conf /data/data/com.paranoid.preferences/files/backup
-cp -f /system/etc/paranoid/Phone.conf /data/data/com.paranoid.preferences/files/backup
