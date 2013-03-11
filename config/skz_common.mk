@@ -45,6 +45,9 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 PRODUCT_PACKAGES += \
     ParanoidWallpapers
 
+# Embed SuperUser in Settings
+SUPERUSER_EMBEDDED := true
+
 # T-Mobile theme engine
 include vendor/skz/config/themes_common.mk
 
@@ -103,11 +106,11 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
     ro.skzrom.version=$(SKZ_VERSION)_jb \
-    ro.modversion=$(SKZ_VERSION)_jb-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.modversion=$(SKZ_VERSION)_jb_4.2.2-$(shell date +%0d%^b%Y-%H%M%S) \
     ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(PA_VERSION) \
     ro.pac.version=$(PAC_VERSION) \
-    ro.aokp.version=$(BOARD)_jb-Milestone-1
+    ro.aokp.version=$(BOARD)_jb-mr1_build-1
 
 # goo.im properties
 ifneq ($(DEVELOPER_VERSION),true)
