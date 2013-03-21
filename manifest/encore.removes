@@ -1,2 +1,6 @@
 [
-] 
+    {
+        "name":     "platform/hardware/ti/wlan",
+        "path":     "hardware/ti/wlan"
+    }
+]
