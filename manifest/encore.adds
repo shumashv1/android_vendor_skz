@@ -15,6 +15,13 @@
     },
     {
         "remote":       "github",
+        "account":      "eyeballer",
+        "repository":   "proprietary_vendor_bn",
+        "target_path":  "vendor/bn",
+        "revision":     "jellybean"
+    },
+    {
+        "remote":       "github",
         "account":      "CyanogenMod",
         "repository":   "android_hardware_ti_wlan",
         "target_path":  "hardware/ti/wlan",
