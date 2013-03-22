@@ -6,5 +6,9 @@
     {
         "name":     "platform/hardware/ti/omap3",
         "path":     "hardware/ti/omap3"
+    },
+    {
+        "name":     "ParanoidAndroid/android_system_core",
+        "path":     "system/core"
     }
 ]
