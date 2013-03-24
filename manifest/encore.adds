@@ -2,6 +2,13 @@
     {
         "remote":       "github",
         "account":      "CyanogenMod",
+        "repository":   "android_build",
+        "target_path":  "build",
+        "revision":     "cm-10.1"
+    },
+    {
+        "remote":       "github",
+        "account":      "CyanogenMod",
         "repository":   "android_device_generic_armv7-a-neon",
         "target_path":  "device/generic/armv7-a-neon",
 	"revision":     "cm-10.1"
