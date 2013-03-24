@@ -1,14 +1,26 @@
 [
     {
-        "name":     "platform/hardware/ti/wlan",
-        "path":     "hardware/ti/wlan"
+        "name":     "ParanoidAndroid/android_build",
+        "path":     "build"
     },
     {
         "name":     "platform/hardware/ti/omap3",
         "path":     "hardware/ti/omap3"
     },
     {
+        "name":     "platform/hardware/ti/wlan",
+        "path":     "hardware/ti/wlan"
+    },
+    {
+        "name":     "platform/hardware/ti/wpan",
+        "path":     "hardware/ti/wpan"
+    },
+    {
         "name":     "ParanoidAndroid/android_system_core",
         "path":     "system/core"
+    },
+    {
+        "name":     "ParanoidAndroid/android_system_extras",
+        "path":     "system/extras"
     }
 ]
