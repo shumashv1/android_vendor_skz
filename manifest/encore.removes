@@ -1,9 +1,5 @@
 [
     {
-        "name":     "ParanoidAndroid/android_build",
-        "path":     "build"
-    },
-    {
         "name":     "platform/hardware/ti/omap3",
         "path":     "hardware/ti/omap3"
     },
