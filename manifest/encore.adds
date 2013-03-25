@@ -50,6 +50,13 @@
     },
     {
         "remote":       "github",
+        "account":      "mateor",
+        "repository":   "android_system_vold",
+        "target_path":  "system/vold",
+        "revision":     "pa-4.2"
+    },
+    {
+        "remote":       "github",
         "account":      "eyeballer",
         "repository":   "proprietary_vendor_bn",
         "target_path":  "vendor/bn",
