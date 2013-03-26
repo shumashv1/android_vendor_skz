@@ -14,7 +14,8 @@ vendor/skz/prebuilt/common/xbin/su:system/xbin/su \
 vendor/skz/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
 vendor/skz/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
 vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
-vendor/skz/prebuilt/common/apk/LMT_v1.9.apk:system/app/LMT_v1.9.apk \
+vendor/skz/prebuilt/common/apk/LMT.apk:system/app/LMT.apk \
+vendor/skz/prebuilt/common/apk/XposedInstaller.apk:system/app/XposedInstaller.apk \
 vendor/skz/prebuilt/common/apk/libTouchServiceNative.so:system/lib/libTouchServiceNative.so 
 
 # init.d support
@@ -82,8 +83,8 @@ PRODUCT_COPY_FILES += \
 TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
 SKZ_VERSION_MAJOR = 1
-SKZ_VERSION_MINOR = 1
-SKZ_VERSION_MAINTENANCE = 3
+SKZ_VERSION_MINOR = 2
+SKZ_VERSION_MAINTENANCE = 0
 
 SKZ_VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
 SKZ_VERSION := skz_$(BOARD)-$(SKZ_VERSION)
