@@ -14,8 +14,9 @@ vendor/skz/prebuilt/common/xbin/su:system/xbin/su \
 vendor/skz/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
 vendor/skz/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
 vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
-vendor/skz/prebuilt/common/apk/LMT.apk:system/app/LMT.apk \
-vendor/skz/prebuilt/common/apk/XposedInstaller.apk:system/app/XposedInstaller.apk \
+vendor/skz/prebuilt/common/apk/LMT_v1.9.apk:system/app/LMT_v1.9.apk \
+vendor/skz/prebuilt/common/apk/XposedInstaller_2.1.3.apk:system/app/XposedInstaller_2.1.3.apk \
+vendor/skz/prebuilt/common/apk/XposedAppSettings-0.2.1.apk:system/app/XposedAppSettings-0.2.1.apk \
 vendor/skz/prebuilt/common/apk/libTouchServiceNative.so:system/lib/libTouchServiceNative.so 
 
 # init.d support
