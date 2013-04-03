@@ -24,7 +24,7 @@
                 Stock workspace<br\>
                 w/Some Adjustments]]></description>
         <setting type="Hybrid" target="%hybrid_mode" value="1"/>
-        <setting type="Hybrid" target="com.android.systemui.dpi" value="%rom_default_dpi"/>
+        <setting type="Hybrid" target="com.android.systemui.dpi" value="%rom_default_systemui_dpi"/>
         <setting type="Hybrid" target="com.android.systemui.layout" value="%rom_default_layout"/>
         <setting type="Android" target="lockscreen_clock_align_center" value="1"/>
         <setting type="Android" target="status_bar_battery" value="4"/>
