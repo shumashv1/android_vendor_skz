@@ -39,8 +39,8 @@ $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=touchpad \
-    BUILD_FINGERPRINT="motorola/tervigon/wingray:4.0.3/IML77/239789:user/release-keys" \
-    PRIVATE_BUILD_DESC="tervigon-user 4.0.3 IML77 239789 release-keys"
+    BUILD_FINGERPRINT=hp/hp_tenderloin/tenderloin:4.2.2/JDQ39/573038:user/release-keys
+    PRIVATE_BUILD_DESC="tenderloin-user 4.2.2 JDQ39 573038 release-keys" \
 
 PRODUCT_NAME := skz_tenderloin
 PRODUCT_DEVICE := tenderloin
