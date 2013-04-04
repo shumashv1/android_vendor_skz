@@ -6,7 +6,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Copy specific ROM files
 PRODUCT_COPY_FILES += \
-vendor/skz/prebuilt/common/apk/ParanoidPreferences.apk:system/app/ParanoidPreferences.apk \
+vendor/skz/prebuilt/common/apk/ParanoidPreferences2.apk:system/app/ParanoidPreferences.apk \
 vendor/skz/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
 vendor/skz/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
 vendor/skz/prebuilt/common/apk/SuperSU.apk:system/app/SuperSU.apk \
@@ -84,21 +84,21 @@ PRODUCT_COPY_FILES += \
 
 TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
-SKZ_VERSION_MAJOR = 2
-SKZ_VERSION_MINOR = 0
+SKZ_VERSION_MAJOR = 1
+SKZ_VERSION_MINOR = 2
 SKZ_VERSION_MAINTENANCE = 0
 
 SKZ_VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
 SKZ_VERSION := skz_$(BOARD)-$(SKZ_VERSION)
 
-PA_VERSION_MAJOR = 3
-PA_VERSION_MINOR = 0
-PA_VERSION_MAINTENANCE = 0
+PA_VERSION_MAJOR = 2
+PA_VERSION_MINOR = 5
+PA_VERSION_MAINTENANCE = 4
 
 PA_VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
 PA_VERSION := $(BOARD)-$(PA_VERSION)
 
-PAC_VERSION_MAJOR = 20
+PAC_VERSION_MAJOR = 19
 PAC_VERSION_MINOR = 0
 PAC_VERSION_MAINTENANCE = 0
 PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENANCE)
@@ -106,11 +106,11 @@ PAC_VERSION := $(PAC_VERSION_MAJOR).$(PAC_VERSION_MINOR).$(PAC_VERSION_MAINTENAN
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
     ro.skzrom.version=$(SKZ_VERSION)_jb \
-    ro.modversion=$(SKZ_VERSION)_jb_4.2.2-$(shell date +%0d%^b%Y-%H%M%S) \
+    ro.modversion=$(SKZ_VERSION)_jb_4.1.2-$(shell date +%0d%^b%Y-%H%M%S) \
     ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(PA_VERSION) \
     ro.pac.version=$(PAC_VERSION) \
-    ro.aokp.version=$(BOARD)_jb-mr1_build-1
+    ro.aokp.version=$(BOARD)_jb-Milestone-1
 
 # goo.im properties
 ifneq ($(DEVELOPER_VERSION),true)
