@@ -13,4 +13,4 @@
         <setting type="Android" target="status_bar_show_clock" value="0"/>
         <setting type="Android" target="max_notification_icons" value="2"/>
 
-</property>s
+</property>
