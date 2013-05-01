@@ -4,12 +4,12 @@
         "account":      "NookieDevs",
         "repository":   "android_device_bn_encore",
         "target_path":  "device/bn/encore",
-        "revision":     "jellybean"
+        "revision":     "cm-10.1"
     },
     {
         "remote":       "github",
         "account":      "NookieDevs",
-        "repository":   "android_kernel_bn_encore",
+        "repository":   "android_kernel_bn_encore3",
         "target_path":  "kernel/bn/encore",
         "revision":     "encore-omap3-3"
     },
