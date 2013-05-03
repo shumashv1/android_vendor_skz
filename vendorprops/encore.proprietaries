@@ -9,7 +9,7 @@
     {
         "remote":       "github",
         "account":      "NookieDevs",
-        "repository":   "android_kernel_bn_encore",
+        "repository":   "ti-omap-encore-kernel3",
         "target_path":  "kernel/bn/encore",
         "revision":     "encore-omap3-3"
     },
