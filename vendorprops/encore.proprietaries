@@ -4,7 +4,7 @@
         "account":      "NookieDevs",
         "repository":   "android_device_bn_encore",
         "target_path":  "device/bn/encore",
-        "revision":     "jellybean"
+        "revision":     "cm-10.1"
     },
     {
         "remote":       "github",

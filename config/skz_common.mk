@@ -9,7 +9,6 @@ PRODUCT_COPY_FILES += \
 vendor/skz/prebuilt/common/apk/ParanoidPreferences3.15.apk:system/app/ParanoidPreferences.apk \
 vendor/skz/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
 vendor/skz/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
-vendor/skz/prebuilt/common/xbin/su:system/xbin/su \
 vendor/skz/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
 vendor/skz/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
 vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
@@ -65,8 +64,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/skz/overlay/common
 # SKZ overlays 
  $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/assets/images/android-logo-mask.png frameworks/base/core/res/assets/images/android-logo-mask.png) 
  $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/res/drawable-nodpi/default_wallpaper.jpg frameworks/base/core/res/res/drawable-nodpi/default_wallpaper.jpg) 
- $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/res/drawable-sw600dp-nodpi/default_wallpaper.jpg frameworks/base/core/res/res/drawable-sw600dp-nodpi/default_wallpaper.jpg) 
- $(shell cp -f vendor/skz/overlay/common/frameworks/base/core/res/res/drawable-sw720dp-nodpi/default_wallpaper.jpg frameworks/base/core/res/res/drawable-sw720dp-nodpi/default_wallpaper.jpg) 
 
 # Allow device family to add overlays and use a same prop.conf
 ifneq ($(OVERLAY_TARGET),)
@@ -91,7 +88,7 @@ SKZ_VERSION := skz_$(BOARD)-$(SKZ_VERSION)
 
 PA_VERSION_MAJOR = 3
 PA_VERSION_MINOR = 1
-PA_VERSION_MAINTENANCE = 0
+PA_VERSION_MAINTENANCE = 5
 
 PA_VERSION := $(PA_VERSION_MAJOR).$(PA_VERSION_MINOR)$(PA_VERSION_MAINTENANCE)
 PA_VERSION := $(BOARD)-$(PA_VERSION)
