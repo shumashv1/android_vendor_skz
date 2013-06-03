@@ -44,6 +44,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 PRODUCT_NAME := skz_tenderloin
 PRODUCT_DEVICE := tenderloin
+PRODUCT_BRAND := HP
 
 GET_VENDOR_PROPS := $(shell vendor/skz/tools/getvendorprops.py $(PRODUCT_NAME))
 
