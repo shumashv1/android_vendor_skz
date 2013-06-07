@@ -1,7 +1,7 @@
 <property name="Phone UI" active="true" image="/system/etc/paranoid/preferences/images/phone.png" color="#f4b122">
 
         <description><![CDATA[
-            This will put your device into 155 DPI/360p Phone UI, none of your apps will be changed.
+            This will put your device into 160 DPI/360p Phone UI, none of your apps will be changed.
         ]]></description>
         <setting type="Hybrid" target="%hybrid_mode" value="1"/>
         <setting type="Hybrid" target="com.android.systemui.dpi" value="160"/>

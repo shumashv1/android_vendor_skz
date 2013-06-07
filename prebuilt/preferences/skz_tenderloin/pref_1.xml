@@ -1,7 +1,7 @@
 <property name="Stock UI" active="true" image="/system/etc/paranoid/preferences/images/phablet.png" color="#238fcd">
 
         <description><![CDATA[
-            This will put your device into 155 DPI/600p Phablet UI, none of your apps will be changed.
+            This will put your device into 160 DPI/600p Phablet UI, none of your apps will be changed.
         ]]></description>
         <setting type="Hybrid" target="%hybrid_mode" value="1"/>
         <setting type="Hybrid" target="com.android.systemui.dpi" value="%rom_default_dpi"/>
