@@ -8,7 +8,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
 vendor/skz/prebuilt/common/apk/ParanoidPreferences3.15.apk:system/app/ParanoidPreferences.apk \
 vendor/skz/prebuilt/common/apk/GooManager.apk:system/app/GooManager.apk \
-vendor/skz/prebuilt/common/apk/PerformanceControl.apk:system/app/PerformanceControl.apk \
 vendor/skz/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk \
 vendor/skz/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
 vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
@@ -45,6 +44,7 @@ PRODUCT_PACKAGES += \
 # AOKP common packages
 PRODUCT_PACKAGES += \
     PermissionsManager \
+    ROMControl
 
 # Embed SuperUser in Settings
 SUPERUSER_EMBEDDED := true

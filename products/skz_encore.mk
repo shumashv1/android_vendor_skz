@@ -13,14 +13,11 @@ include vendor/skz/config/skz_common.mk
 #Check to see if we should use prebuilt
 ifneq ($(BUILD_FROM_SOURCE),true)
     PRODUCT_COPY_FILES += \
-        vendor/skz/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk
+        vendor/skz/prebuilt/common/apk/ROMControl.apk:system/app/PerformanceControl.apk
 else
-#Build ROMControl from modified source
-# ROM stamp
-$(shell shuf -i 0-100000 -n 1 > .stamp)
-
+#Build Performance Controls from source
 PRODUCT_PACKAGES += \
-    ROMControl
+    PerformanceControl
 endif
 
 
