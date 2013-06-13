@@ -15,7 +15,7 @@ ifneq ($(BUILD_FROM_SOURCE),true)
     PRODUCT_COPY_FILES += \
         vendor/skz/prebuilt/common/apk/ROMControl.apk:system/app/ROMControl.apk
 else
-#Build ROMControl from modified source
+#Build ROMControl 
 # ROM stamp
 $(shell shuf -i 0-100000 -n 1 > .stamp)
 
