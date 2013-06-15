@@ -21,7 +21,6 @@ PRODUCT_COPY_FILES += \
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
-    vendor/skz/prebuilt/common/etc/init.d/01freqs:system/etc/init.d/01freqs
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -39,11 +38,13 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
-    ParanoidWallpapers
+    ParanoidWallpapers \
+    HALO
 
 # AOKP common packages
 PRODUCT_PACKAGES += \
     PermissionsManager \
+    PerformanceControl \
     ROMControl
 
 # Embed SuperUser in Settings
@@ -84,7 +85,7 @@ PRODUCT_COPY_FILES += \
 TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
 SKZ_VERSION_MAJOR = 2
-SKZ_VERSION_MINOR = 0
+SKZ_VERSION_MINOR = 1
 SKZ_VERSION_MAINTENANCE = 0
 
 SKZ_VERSION := $(SKZ_VERSION_MAJOR).$(SKZ_VERSION_MINOR)$(SKZ_VERSION_MAINTENANCE)
