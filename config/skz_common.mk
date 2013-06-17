@@ -107,7 +107,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.skz.version=$(SKZ_VERSION) \
     ro.skzrom.version=$(SKZ_VERSION)_jb \
     ro.modversion=$(SKZ_VERSION)_jb_4.2.2-$(shell date +%0d%^b%Y-%H%M%S) \
-    ro.pa.family=$(PA_CONF_SOURCE) \
     ro.pa.version=$(PA_VERSION) \
     ro.pac.version=$(PAC_VERSION) \
     ro.aokp.version=$(BOARD)_jb-mr1_build-1
