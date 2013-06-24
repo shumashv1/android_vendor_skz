@@ -13,7 +13,9 @@ vendor/skz/prebuilt/common/apk/LatinIMEGoogle.apk:system/app/LatinIMEGoogle.apk 
 vendor/skz/prebuilt/common/apk/LatinIMEDictionaryPack.apk:system/app/LatinIMEDictionaryPack.apk \
 vendor/skz/prebuilt/common/apk/libjni_latinimegoogle.so:system/lib/libjni_latinimegoogle.so \
 vendor/skz/prebuilt/common/apk/libTouchServiceNative.so:system/lib/libTouchServiceNative.so \
-vendor/skz/prebuilt/common/xbin/su:system/xbin/su 
+vendor/skz/prebuilt/common/xbin/su:system/xbin/su \
+vendor/pac/prebuilt/common/apk/PACStats.apk:system/app/PACStats.apk
+
 
 # init.d support
 PRODUCT_COPY_FILES += \
