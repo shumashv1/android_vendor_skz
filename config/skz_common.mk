@@ -46,7 +46,6 @@ PRODUCT_PACKAGES += \
 
 # AOKP common packages
 PRODUCT_PACKAGES += \
-    PermissionsManager \
     PerformanceControl \
     ROMControl
 
