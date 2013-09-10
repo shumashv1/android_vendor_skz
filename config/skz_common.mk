@@ -84,8 +84,7 @@ PRODUCT_COPY_FILES += \
     vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/properties.conf \
     vendor/skz/prebuilt/$(SKZ_CONF_SOURCE).conf:system/etc/paranoid/backup.conf 
 
-# Using Custom ReleaseRool
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := vendor/skz/skz_ota_from_target_files
+TARGET_CUSTOM_RELEASETOOL := vendor/skz/tools/squisher
 
 SKZ_VERSION_MAJOR = 3
 SKZ_VERSION_MINOR = 0
