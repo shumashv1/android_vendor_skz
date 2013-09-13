@@ -22,7 +22,7 @@ PRODUCT_COPY_FILES += \
 
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/skz/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
+   vendor/skz/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit \
    vendor/skz/prebuilt/common/etc/init.d/01freqs:system/etc/init.d/01freqs
 
 # Backup Tool
@@ -42,12 +42,6 @@ $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
     HALO \
-    ParanoidWallpapers \
-
-# AOKP common packages
-PRODUCT_PACKAGES += \
-    PerformanceControl \
-    ROMControl
 
 # Embed SuperUser in Settings
 SUPERUSER_EMBEDDED := true
