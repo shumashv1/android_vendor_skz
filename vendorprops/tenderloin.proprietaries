@@ -11,6 +11,6 @@
         "account":      "shumashv1",
         "repository":   "hp-kernel-tenderloin",
         "target_path":  "kernel/hp/tenderloin",
-        "revision":     "ics"
+        "revision":     "cm-10.1"
     }
 ]
