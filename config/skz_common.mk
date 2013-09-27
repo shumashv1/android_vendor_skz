@@ -35,10 +35,16 @@ PRODUCT_COPY_FILES +=  \
 # Bring in all video files
 $(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
 
+# PAC Packages
+PRODUCT_PACKAGES += \
+    GooglePacman \
+    PacPapers \
+    PacStats
+
 # ParanoidAndroid common packages
 PRODUCT_PACKAGES += \
     HALO \
-
+    Focal
 # Embed SuperUser in Settings
 SUPERUSER_EMBEDDED := true
 
